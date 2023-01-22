@@ -1,9 +1,9 @@
 import React from 'react';
 
 import CartProvider from './store/CartProvider';
-import Header from './component/Layout/Header';
-import Meals from './component/Meals/Meals';
-import Cart from './component/Cart/Cart';
+import Header from './components/Layout/Header';
+import Meals from './components/Meals/Meals';
+import Cart from './components/Cart/Cart';
 import { useState } from 'react';
 
 function App() {
