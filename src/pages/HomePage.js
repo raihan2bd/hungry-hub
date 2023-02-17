@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Foods from '../components/Meals/Meals';
-const FoodsPage = () => {
+const HomePage = () => {
   return (
     <section>
       <Foods />
@@ -9,4 +9,4 @@ const FoodsPage = () => {
   )
 }
 
-export default Foods;
+export default HomePage;
