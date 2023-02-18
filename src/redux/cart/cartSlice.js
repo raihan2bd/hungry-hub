@@ -12,11 +12,11 @@ const cartSlice = createSlice({
   name: "cart-slice",
   initialState,
   reducers: {
-    addItem (state, action) {
+    addItem (state, { payload }) {
         const updatedTotalAmount =
-          state.totalAmount + action.item.price * action.item.amount;
+          state.totalAmount + payload.price * payload.amount;
         const existingCartItemIndex = state.items.findIndex(
-          (item) => action.item.id === item.id
+          (item) => payload.id === item.id
         );
     
         const existingCartItem = state.items[existingCartItemIndex];
@@ -25,12 +25,12 @@ const cartSlice = createSlice({
         if (existingCartItem) {
           const updatedItem = {
             ...existingCartItem,
-            amount: existingCartItem.amount + action.item.amount,
+            amount: existingCartItem.amount + payload.amount,
           };
           updatedItems = [...state.items];
           updatedItems[existingCartItemIndex] = updatedItem;
         } else {
-          updatedItems = state.items.concat(action.item);
+          updatedItems = state.items.concat(payload);
         }
         return {
           items: updatedItems,
@@ -39,15 +39,15 @@ const cartSlice = createSlice({
     },
 
     // removeItem is remove item from state
-    removeItem (state, action) {
+    removeItem (state, { payload }) {
       const existingCartItemIndex = state.items.findIndex(
-        (item) => item.id === action.id
+        (item) => item.id === payload
       );
       const existingCartItem = state.items[existingCartItemIndex];
       let updatedItems;
       let updatedTotalAmount = state.totalAmount - existingCartItem.price;
       if (existingCartItem.amount === 1) {
-        updatedItems = state.items.filter((item) => item.id !== action.id);
+        updatedItems = state.items.filter((item) => item.id !== payload);
       } else {
         updatedItems = [...state.items];
         const updatedItem = {
