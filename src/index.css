@@ -9,3 +9,12 @@ html {
 body {
   margin: 0;
 }
+
+button {
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+button:active {
+  transform: translateY(-2px);
+}
