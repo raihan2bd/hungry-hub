@@ -1,7 +1,3 @@
-# Notice
-
-### This site is under construction and readme will update soon when the project is ready for production. Thanks for visiting.
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
