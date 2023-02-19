@@ -5,7 +5,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
-  totalAmount: 0
+  totalAmount: 0,
+  cartIsShown: false
 }
 
 const cartSlice = createSlice({
@@ -61,6 +62,20 @@ const cartSlice = createSlice({
         items: updatedItems,
         totalAmount: updatedTotalAmount,
       };
+    },
+
+    showCart (state) {
+      return {
+        ...state,
+        cartIsShown: true,
+      }
+    },
+
+    hideCart (state) {
+      return {
+        ...state,
+        cartIsShown: false,
+      }
     }
   }
 });

@@ -1,8 +1,11 @@
 import React from 'react';
 
+import Auth from '../components/Auth/Auth';
+import classes from './AuthPage.module.css';
+
 const AuthPage = () => (
-  <section>
-    <h2>Hello From Auth Page</h2>
+  <section className={classes.auth_section}>
+    <Auth />
   </section>
 );
 

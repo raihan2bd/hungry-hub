@@ -1,21 +1,53 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { cartActions } from '../../redux/cart/cartSlice';
+import { authActions } from '../../redux/auth/authSlice';
+import Cart from '../Cart/Cart';
 import HeaderCartButton from './HeaderCartButton';
-import mealImage from '../../assets/meals.jpg';
 import classes from './Header.module.css';
+import { NavLink } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = () => {
+  const cartIsShown = useSelector((state) => state.cart.cartIsShown)
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  const dispatch = useDispatch();
+
+  const cartShowHandler = () => {
+    dispatch(cartActions.showCart());
+  }
+
+  const cartHideHandler = () => {
+    dispatch(cartActions.hideCart())
+  }
+
+  const logoutHandler = () => {
+    dispatch(authActions.logout())
+  }
+
   return (
-    <React.Fragment>
+    <>
       <header className={classes.header}>
-        <h1>ReactMeals</h1>
-        <HeaderCartButton onClick={props.onShowCart} />
+        <div className={classes.brand}>
+          <h1>HungryHub</h1>
+        </div>
+        <nav className={classes.nav}>
+          <ul className={classes.nav_items}>
+            <li className={classes.nav_item}>
+              <NavLink to="/">Home</NavLink>
+            </li>
+           {!isAuth && <li className={classes.nav_item}>
+              <NavLink to="/auth">Login</NavLink>
+            </li>}
+            {isAuth && <li className={classes.nav_item}>
+              <button onClick={logoutHandler} className={classes.btn_logout} type='button'>Logout</button>
+            </li>}
+          </ul>
+          <HeaderCartButton onClick={cartShowHandler} />
+        </nav>
       </header>
-
-      <div className={classes['main-image']}>
-        <img src={mealImage} alt="A table full of dilicious food!" />
-      </div>
-    </React.Fragment>
+      {cartIsShown && <Cart onHideCart={cartHideHandler} />}
+    </>
   );
 };
 

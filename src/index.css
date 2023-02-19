@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
@@ -8,4 +10,25 @@ html {
 
 body {
   margin: 0;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+button:active {
+  transform: translateY(-2px);
+}
+
+a {
+  text-decoration: none;
+}
+
+a.active::after {
+  background: #e1e1e1 !important;
+}
+
+a.active:hover::after {
+  background: #4d1601 !important;
 }
