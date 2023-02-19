@@ -8,7 +8,7 @@ import classes from './Auth.module.css';
 const Auth = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const authState = useSelector((state) => state.auth);
   const {isAuth} = authState;
   const dispatch = useDispatch();
