@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { cartActions } from '../../redux/cart/cartSlice';
+import { authActions } from '../../redux/auth/authSlice';
 import Cart from '../Cart/Cart';
 import HeaderCartButton from './HeaderCartButton';
 import classes from './Header.module.css';
@@ -20,6 +21,10 @@ const Header = () => {
     dispatch(cartActions.hideCart())
   }
 
+  const logoutHandler = () => {
+    dispatch(authActions.logout())
+  }
+
   return (
     <>
       <header className={classes.header}>
@@ -35,7 +40,7 @@ const Header = () => {
               <NavLink to="/auth">Login</NavLink>
             </li>}
             {isAuth && <li className={classes.nav_item}>
-              <button className={classes.btn_logout} type='button'>Logout</button>
+              <button onClick={logoutHandler} className={classes.btn_logout} type='button'>Logout</button>
             </li>}
           </ul>
           <HeaderCartButton onClick={cartShowHandler} />
