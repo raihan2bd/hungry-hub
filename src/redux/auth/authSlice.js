@@ -22,9 +22,11 @@ export const login = createAsyncThunk(
           },
         }
       );
-      console.log(response);
+      return {
+        token: response.data.idToken,
+        isAuth: true
+      }
     } catch (err) {
-      console.log(err)
       return rejectWithValue(err.message);
     }
   }
