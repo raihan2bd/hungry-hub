@@ -1,17 +1,29 @@
-.meal {
+.food {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 5px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.food_img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+}
+
+.food_info {
+  margin: 1rem;
   display: flex;
   justify-content: space-between;
-  margin: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
 }
 
-.meal h3 {
+.food_info h3 {
   margin: 0 0 0.25rem 0;
-}
-
-.description {
-  font-style: italic;
 }
 
 .price {
@@ -19,4 +31,16 @@
   font-weight: bold;
   color: #ad5502;
   font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .food {
+    width: 48%;
+  }
+}
+
+@media (min-width: 1080px) {
+  .food {
+    width: 32%;
+  }
 }

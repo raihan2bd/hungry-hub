@@ -9,19 +9,23 @@ const MealItem = (props) => {
   const dispatch = useDispatch();
 
   const addToCartHandler = (amount) => {
-    dispatch(cartActions.addItem({
-      id: props.id,
-      name: props.name,
-      amount: amount,
-      price: props.price,
-    }));
+    dispatch(
+      cartActions.addItem({
+        id: props.id,
+        name: props.name,
+        amount: amount,
+        price: props.price,
+      })
+    );
   };
   const price = `$${props.price.toFixed(2)}`;
   return (
-    <li className={classes.meal}>
-      <div>
+    <li className={classes.food}>
+      <div className={classes.food_thamb}>
+        <img className={classes.food_img} src={props.img} alt={props.name} />
+      </div>
+      <div className={classes.food_info}>
         <h3>{props.name}</h3>
-        <div className={classes.description}>{props.description}</div>
         <div className={classes.price}>{price}</div>
       </div>
       <div>

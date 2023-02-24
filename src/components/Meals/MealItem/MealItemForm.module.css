@@ -1,5 +1,9 @@
 .form {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #8a2b06;
+  padding: 1rem;
 }
 
 .form button {
