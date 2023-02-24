@@ -1,24 +1,10 @@
-.meals {
-  max-width: 60rem;
-  width: 90%;
-  margin: 2rem auto;
-  animation: meals-appear 1s ease-out forwards;
-}
-
-.meals ul {
+.food_items {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-@keyframes meals-appear {
-  from {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }

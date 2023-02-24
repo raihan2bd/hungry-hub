@@ -56,15 +56,16 @@ const AvailableMeals = () => {
         name={meal.name}
         description={meal.description}
         price={meal.price}
+        img={meal.img}
       />
     );
   });
   return (
-    <section className={classes.meals}>
+    <>
       <Card>
-        <ul>{mealsList}</ul>
+        <ul className={classes.food_items}>{mealsList}</ul>
       </Card>
-    </section>
+    </>
   );
 };
 
