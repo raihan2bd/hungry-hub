@@ -12,7 +12,7 @@ const HomePage = () => {
         <img src={mealImage} alt="A table full of dilicious food!" />
       </div>
     </section>
-    <section>
+    <section className={classes.foods_section}>
       <Foods />
     </section>
     </>

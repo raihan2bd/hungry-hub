@@ -11,3 +11,22 @@
   object-fit: cover;
   transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
 }
+
+.foods_section {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 2rem 3%;
+  animation: foods-appear 1s ease-out forwards;
+}
+
+@keyframes foods-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
