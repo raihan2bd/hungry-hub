@@ -1,6 +1,6 @@
 .foods_section {
   width: 100%;
-  padding: 2rem 3%;
+  padding: 0 3%;
   animation: foods-appear 1s ease-out forwards;
 }
 

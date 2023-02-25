@@ -3,8 +3,38 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  min-height: 7rem;
+}
+
+.food_items_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.food_items_header h3 {
+  font-size: 1.5rem;
+  color: #8a2b06;
+}
+
+.food_items_header input {
+  max-width: 400px;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+@media (min-width: 768px) {
+  .food_items_header {
+    flex-direction: row;
+  }
 }

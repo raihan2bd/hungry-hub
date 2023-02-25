@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   width: 100%;
   overflow: hidden;
+  transition: transform 0.2s ease-in-out;
 }
 
 .food_img {
@@ -24,6 +25,7 @@
 
 .food_info h3 {
   margin: 0 0 0.25rem 0;
+  color: #ad5502;
 }
 
 .price {
@@ -33,14 +35,29 @@
   font-size: 1.25rem;
 }
 
+.add_to_cart {
+  opacity: 0.8;
+}
+
+
+
+
 @media (min-width: 768px) {
   .food {
     width: 48%;
+  }
+
+  .food:hover {
+    transform: scale(1.06);
+  }
+  
+  .food:hover .add_to_cart {
+    opacity: 1;
   }
 }
 
 @media (min-width: 1080px) {
   .food {
-    width: 32%;
+    width: 31%;
   }
 }
