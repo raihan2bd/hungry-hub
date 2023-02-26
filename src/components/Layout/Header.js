@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { MdRestaurantMenu, MdOutlineMenu } from 'react-icons/md';
 
 import { cartActions } from '../../redux/cart/cartSlice';
 import { authActions } from '../../redux/auth/authSlice';
@@ -9,39 +10,98 @@ import classes from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-  const cartIsShown = useSelector((state) => state.cart.cartIsShown)
+  const [showMenu, setShowMenu] = useState(false);
+  const cartIsShown = useSelector((state) => state.cart.cartIsShown);
   const isAuth = useSelector((state) => state.auth.isAuth);
   const dispatch = useDispatch();
 
   const cartShowHandler = () => {
     dispatch(cartActions.showCart());
-  }
+  };
 
   const cartHideHandler = () => {
-    dispatch(cartActions.hideCart())
-  }
+    dispatch(cartActions.hideCart());
+  };
 
   const logoutHandler = () => {
-    dispatch(authActions.logout())
-  }
+    dispatch(authActions.logout());
+  };
+
+  const showMenuHandler = () => {
+    setShowMenu(true);
+  };
+
+  const hideMenuHandler = () => {
+    setShowMenu(false);
+  };
 
   return (
     <>
       <header className={classes.header}>
         <div className={classes.brand}>
+          <span className={classes.menu_icon}>
+            {!showMenu && <MdOutlineMenu onClick={showMenuHandler} />}
+            {showMenu && <MdRestaurantMenu onClick={hideMenuHandler} />}
+          </span>
           <h1>HungryHub</h1>
         </div>
         <nav className={classes.nav}>
-          <ul className={classes.nav_items}>
+          <ul
+            className={`${classes.nav_items} ${
+              showMenu ? classes.nav_items_mobile : ''
+            }`}
+          >
             <li className={classes.nav_item}>
-              <NavLink to="/">Home</NavLink>
+              <NavLink
+                onClick={hideMenuHandler}
+                className={classes.nav_link}
+                to="/"
+              >
+                Home
+              </NavLink>
             </li>
-           {!isAuth && <li className={classes.nav_item}>
-              <NavLink to="/auth">Login</NavLink>
-            </li>}
-            {isAuth && <li className={classes.nav_item}>
-              <button onClick={logoutHandler} className={classes.btn_logout} type='button'>Logout</button>
-            </li>}
+            {isAuth && (
+              <li className={classes.nav_item}>
+                <NavLink
+                  onClick={hideMenuHandler}
+                  className={classes.nav_link}
+                  to="/order"
+                >
+                  Order
+                </NavLink>
+              </li>
+            )}
+            <li className={classes.nav_item}>
+              <NavLink
+                onClick={hideMenuHandler}
+                className={classes.nav_link}
+                to="/about"
+              >
+                About
+              </NavLink>
+            </li>
+            {!isAuth && (
+              <li className={classes.nav_item}>
+                <NavLink
+                  onClick={hideMenuHandler}
+                  className={classes.nav_link}
+                  to="/auth"
+                >
+                  Login
+                </NavLink>
+              </li>
+            )}
+            {isAuth && (
+              <li onClick={hideMenuHandler} className={classes.nav_item}>
+                <button
+                  onClick={logoutHandler}
+                  className={classes.btn_logout}
+                  type="button"
+                >
+                  Logout
+                </button>
+              </li>
+            )}
           </ul>
           <HeaderCartButton onClick={cartShowHandler} />
         </nav>

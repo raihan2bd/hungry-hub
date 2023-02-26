@@ -25,10 +25,18 @@ a {
   text-decoration: none;
 }
 
-a.active::after {
-  background: #e1e1e1 !important;
+a.active {
+  color: #310101;
 }
 
-a.active:hover::after {
-  background: #4d1601 !important;
+
+@media (min-width: 768px) {
+
+  a.active::after {
+    background: #e1e1e1 !important;
+  }
+  
+  a.active:hover::after {
+    background: #4d1601 !important;
+  }
 }
