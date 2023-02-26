@@ -9,9 +9,42 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 3%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 10;
+}
+
+.brand {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu_icon {
+  background: #4d1601;
+  color: #fff;
+  font-size: 1.7rem;
+  padding: 0.125rem 0.350rem;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.menu_icon svg {
+  animation: menu_animation 0.3s;
+}
+
+@keyframes menu_animation {
+  0% {
+    opacity: 0.5;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .nav {
@@ -19,31 +52,62 @@
   justify-content: space-between;
 }
 
-.nav_items {
+/* .nav_items {
   list-style: none;
   display: flex;
   gap: 1rem;
   align-items: center;
   margin-right: 1rem;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  background: #8a2b06;
+} */
+
+.nav_items {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  bottom: -5rem;
+  left: 0;
+  background: rgba(94, 28, 2, 0.4);
+  height: 100vh;
+  z-index: 9;
+  gap: 1rem;
+  width: 100vw;
+  backdrop-filter: blur(5px);
+  padding-top: 1rem;
+  animation: nav_animation 0.3s ease-in-out;
 }
 
-.nav_item a {
-  color: #fff;
-  font-size: 1.05rem;
-  padding: 0.5rem 0;
+.nav_items_mobile {
+  display: flex;
 }
 
-.nav_item a:hover {
-  color: #4d1601;
+@keyframes nav_animation {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
-.nav_item a::after {
-  content: "";
-  margin-top: 3px;
+.nav_link {
   display: block;
-  width: 100%;
-  height: 3px;
-  background-color: transparent;
+  max-width: 90%;
+  padding: 0.7rem 1rem;
+  background: #8a2b06;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav_link:active {
+  background: #b33605;
 }
 
 .btn_logout {
@@ -57,4 +121,47 @@
 
 .btn_logout:hover {
   background: #4d1601;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 0 5%;
+  }
+  .menu_icon {
+    display: none;
+  }
+
+  .nav_items {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    margin-right: 1rem;
+  }
+
+  .nav_items .nav_link {
+    color: #fff;
+    font-size: 1.05rem;
+    padding: 0.5;
+    display: block;
+    border: none;
+  }
+  
+  .nav_items .nav_link:hover {
+    color: #4d1601;
+  }
+  
+  .nav_items .nav_link::after {
+    content: "";
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+  }
 }
