@@ -1,9 +1,13 @@
 .container {
   margin: 1rem;
   padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .cart_summary {
+  flex: 1;
   padding: 1rem;
   background: #d8d8d8;
   border-radius: 12px;
@@ -55,14 +59,10 @@
   padding: 0.5rem 1rem;
 }
 
-.checkout_form_section {
-  margin: 1rem 0;
-  display: flex;
-}
-
 .checkout_form {
+  flex: 1;
   width: 100%;
-  background: #333;
+  background: #c7c7c7;
   border-radius: 12px;
   padding: 1rem;
   animation: form_animation 0.5s ease-in-out;
@@ -82,32 +82,37 @@
 .checkout_form h2 {
   margin: 1rem 0;
   text-align: center;
-  color: #fff;
 }
 
 .form_group {
   display: flex;
-  flex-wrap: wrap;
-  border: none;
+  flex-direction: column;
   gap: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  border: none;
 }
 
-.checkout_form input {
+.form_control label {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.form_control input {
+  margin-top: 0.5rem;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   border: none;
   border-radius: 3px;
+  font-size: 1rem;
 }
 
 .checkout_form button {
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   border: 1px solid #8a2b06;
   background: #8a2b06;
   color: #fff;
+  font-size: 1rem;
 }
 
 .checkout_form button:active {
@@ -117,17 +122,17 @@
 
 .has_error {
   text-align: center;
-  color: #ff4800;
+  color: #bd3702;
   margin: 1rem 0;
 }
 
 @media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
   .checkout_form {
     align-items: center;
     justify-content: center;
-  }
-  .checkout_form input, .checkout_form button {
-    width: 48%;
   }
 
   .checkout_form button:hover {
