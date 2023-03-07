@@ -1,0 +1,132 @@
+.container {
+  margin: 1rem;
+  padding-top: 1rem;
+}
+
+.cart_summary {
+  padding: 1rem;
+  background: #d8d8d8;
+  border-radius: 12px;
+  animation: cart_summary_animation 0.5s ease-in-out;
+}
+
+@keyframes cart_summary_animation {
+  0% {
+    transform: translateY(-100%);
+  }
+  
+  100% {
+    transform: translateY(0);
+
+  }
+}
+
+.cart_summary h2 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.cart_items {
+  list-style: none;
+}
+
+.cart_item {
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.cart_item:nth-child(odd) {
+  background: #e7e6e6;
+}
+
+.cart_price {
+  margin-left: auto;
+}
+
+.cart_total_price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #8a2b06;
+  border-top: 2px solid #8a2b06;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.checkout_form_section {
+  margin: 1rem 0;
+  display: flex;
+}
+
+.checkout_form {
+  width: 100%;
+  background: #888888;
+  border-radius: 12px;
+  padding: 1rem;
+  animation: form_animation 0.5s ease-in-out;
+}
+
+@keyframes form_animation {
+  0% {
+    transform: translateX(100%);
+  }
+  
+  100% {
+    transform: translateX(0);
+
+  }
+}
+
+.checkout_form h2 {
+  margin: 1rem 0;
+  text-align: center;
+  color: #fff;
+}
+
+.form_group {
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout_form input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+}
+
+.checkout_form button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #8a2b06;
+  background: #8a2b06;
+  color: #fff;
+}
+
+.checkout_form button:active {
+  background: #fff;
+  color: #8a2b06;
+}
+
+@media (min-width: 768px) {
+  .checkout_form {
+    align-items: center;
+    justify-content: center;
+  }
+  .checkout_form input, .checkout_form button {
+    width: 48%;
+  }
+
+  .checkout_form button:hover {
+    background: #fff;
+    color: #8a2b06;
+  }
+}
+
