@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { cartActions } from '../../redux/cart/cartSlice';
@@ -12,6 +13,7 @@ const Cart = (props) => {
   const hasItems = cartState.items.length > 0;
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const cartItemRemoveHandler = (id) => {
     dispatch(cartActions.removeItem(id));
@@ -53,8 +55,11 @@ const Cart = (props) => {
         </button>
 
         {hasItems && (
-          <button type="button" className={classes.button}>
-            Order
+          <button onClick={() => {
+            navigate('/checkout');
+            props.onHideCart();
+            }} type="button" className={classes.button}>
+            Checkout
           </button>
         )}
       </div>

@@ -24,6 +24,7 @@ export const login = createAsyncThunk(
       );
       return {
         token: response.data.idToken,
+        userId: response.data.localId,
         isAuth: true
       }
     } catch (err) {
@@ -37,6 +38,7 @@ const initialState = {
   loading: false,
   error: null,
   token: null,
+  userId: null,
   isAuth: false,
 };
 
@@ -50,6 +52,7 @@ const authSlice = createSlice({
         loading: false,
         error: null,
         token: null,
+        userId: null,
         isAuth: false,
       };
     },
@@ -61,6 +64,7 @@ const authSlice = createSlice({
         loading: true,
         error: null,
         token: null,
+        userId: null,
         isAuth: false,
       };
     });
@@ -71,6 +75,7 @@ const authSlice = createSlice({
         loading: false,
         error: null,
         token: payload.token,
+        userId: payload.userId,
         isAuth: payload.isAuth,
       };
     });
@@ -81,6 +86,7 @@ const authSlice = createSlice({
         loading: false,
         error: payload,
         token: null,
+        userId: null,
         isAuth: false,
       };
     });
