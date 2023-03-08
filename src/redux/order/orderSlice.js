@@ -1,16 +1,50 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const fetchOrders = createAsyncThunk('order/fetch', async ({token, orderData}) => {
-  try {
-    const response = await axios.post("/orders.json?auth=" + token, orderData)
-    console.log(response.data);
-  } catch(err) {
-    console.log(err);
-  }
-});
+const baseApiUrl = 'https://food-order-ed00a-default-rtdb.asia-southeast1.firebasedatabase.app';
 
-const initialState = []
+// export const fetchOrders = createAsyncThunk('order/fetch', async (data) => {
+//   try {
+//     const response = await axios.get(`${baseApiUrl}/orders.json?auth=${data.token}&orderBy="userId"&equalTo="${data.userId}"`)
+//     const fetchedOrders = [];
+//     for (let key in response.data) {
+//       fetchedOrders.push({
+//         ...response.data[key],
+//         id: key
+//       })
+//     }
+//     return fetchOrders;
+//   } catch(err) {
+//     console.log(err);
+//   }
+// });
+
+export const fetchOrders = createAsyncThunk('fetch/order', async({token, userId}) => {
+  const response = await axios.get(`${baseApiUrl}/orders.json?auth=${token}&orderBy="userId"&equalTo="${userId}"`)
+  const fetchedOrders = [];
+  for (let key in response.data) {
+    fetchedOrders.push({
+      ...response.data[key],
+      id: key,
+    })
+  }
+  return fetchedOrders;
+})
+
+const initialState = {
+  orders: [],
+}
+
+// const orderSlice = createSlice({
+//   name: "order-slice",
+//   initialState,
+//   reducers: {},
+//   extraReducers: builder => {
+//     builder.addCase(fetchOrders.fulfilled, (state) => {
+//       return state;
+//     })
+//   }
+// })
 
 const orderSlice = createSlice({
   name: "order-slice",
@@ -18,7 +52,8 @@ const orderSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchOrders.fulfilled, (state, action) => {
-      return [...action.payload]
+      const updatedState = {...state, orders: [...action.payload]}
+      return updatedState;
     })
   }
 })
