@@ -1,0 +1,50 @@
+.title {
+  text-align: center;
+  color: #8a2b06;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem;
+}
+
+
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  width: 50%;
+  animation: card_animation 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes card_animation {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.card:nth-child(odd) {
+  align-self: flex-end;
+  animation: card_odd_animation 0.5s ease-in-out
+}
+
+@keyframes card_odd_animation {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
