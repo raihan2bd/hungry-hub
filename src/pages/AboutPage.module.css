@@ -15,9 +15,10 @@
 .card {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   padding: 1rem;
-  width: 50%;
+  width: 100%;
   animation: card_animation 0.5s ease-in-out;
   transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.50);
 }
 
 @keyframes card_animation {
@@ -47,4 +48,10 @@
 
 .card:hover {
   transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 50%;
+  }
 }
