@@ -1,5 +1,5 @@
 .container {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.50);
   padding: 1rem;
   border-radius: 12px;
   width: 500px;
@@ -7,6 +7,21 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin: 1rem;
+  animation: container_animation 0.5s ease-in-out;
+}
+
+@keyframes container_animation {
+  0% {
+    transform: translateY(-100%);
+  }
+  95% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .container h2, .container p {
@@ -30,7 +45,7 @@
 
 .form_control label {
   margin: 0.5rem 0;
-  color: #888;
+  color: #000;
   font-size: 0.875rem;
 }
 
