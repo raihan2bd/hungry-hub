@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { MdRestaurantMenu, MdOutlineMenu } from 'react-icons/md';
 
 import { cartActions } from '../../redux/cart/cartSlice';
-import { authActions } from '../../redux/auth/authSlice';
+import { logout } from '../../redux/auth/authSlice';
 import Cart from '../Cart/Cart';
 import HeaderCartButton from './HeaderCartButton';
 import classes from './Header.module.css';
@@ -24,7 +24,7 @@ const Header = () => {
   };
 
   const logoutHandler = () => {
-    dispatch(authActions.logout());
+    dispatch(logout());
   };
 
   const showMenuHandler = () => {
