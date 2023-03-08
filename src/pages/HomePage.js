@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './HomePage.module.css'
 
-import Foods from '../components/Meals/Meals';
+import Foods from '../components/Foods/Foods';
 import Slider from '../components/Slider/Slider';
 const HomePage = () => {
   return (

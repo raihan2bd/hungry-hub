@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 import Card from '../UI/Card';
-import MealItem from './MealItem/MealItem';
+import FoodItem from './FoodItem/FoodItem';
 import BrianyImage from '../../assets/Biryani.jpg';
 import PizzaImage from '../../assets/pizza.jpg';
 import TajinImage from '../../assets/tajin.png';
 import BurgerImage from '../../assets/burger.jpg';
 import ChickenBarBQImage from '../../assets/Bar-B-Q.jpg';
-import classes from './AvailableMeals.module.css';
+import classes from './Foods.module.css';
 
-const DUMMY_MEALS = [
+const DUMMY_FOODS = [
   {
     id: 'fd1',
     name: 'Bryani',
@@ -52,16 +52,16 @@ const DUMMY_MEALS = [
   },
 ];
 
-const AvailableMeals = () => {
+const Foods = () => {
   const [searchInput, setSearchInput] = useState('');
 
   const onChangeHandler = (e) => {
     setSearchInput(e.target.value.trim())
   }
 
-  let foodItemList = DUMMY_MEALS;
+  let foodItemList = DUMMY_FOODS;
   if (searchInput.length > 0) {
-    foodItemList = DUMMY_MEALS.filter((item) =>
+    foodItemList = DUMMY_FOODS.filter((item) =>
       item.name
         .toLowerCase()
         .includes(searchInput.toLowerCase())
@@ -71,15 +71,15 @@ const AvailableMeals = () => {
   let foodList = <p>No Food Item Found!!</p>;
 
   if(foodItemList.length> 0) {
-    foodList = foodItemList.map((meal) => {
+    foodList = foodItemList.map((food) => {
       return (
-        <MealItem
-          key={meal.id}
-          id={meal.id}
-          name={meal.name}
-          description={meal.description}
-          price={meal.price}
-          img={meal.img}
+        <FoodItem
+          key={food.id}
+          id={food.id}
+          name={food.name}
+          description={food.description}
+          price={food.price}
+          img={food.img}
         />
       );
     });
@@ -98,4 +98,4 @@ const AvailableMeals = () => {
   );
 };
 
-export default AvailableMeals;
+export default Foods;

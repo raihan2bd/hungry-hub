@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { cartActions } from '../../../redux/cart/cartSlice';
-import MealItemFrom from './MealItemForm';
-import classes from './MealItem.module.css';
+import FoodItemFrom from './FoodItemForm';
+import classes from './FoodItem.module.css';
 import { useDispatch } from 'react-redux';
 
-const MealItem = (props) => {
+const FoodItem = (props) => {
   const dispatch = useDispatch();
 
   const addToCartHandler = (amount) => {
@@ -29,10 +29,10 @@ const MealItem = (props) => {
         <div className={classes.price}>{price}</div>
       </div>
       <div className={classes.add_to_cart}>
-        <MealItemFrom onAddToCart={addToCartHandler} />
+        <FoodItemFrom onAddToCart={addToCartHandler} />
       </div>
     </li>
   );
 };
 
-export default MealItem;
+export default FoodItem;
