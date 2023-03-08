@@ -1,20 +1,29 @@
-import axios from 'axios';
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchOrders } from '../redux/order/orderSlice';
+
+import Order from '../components/Order/Order';
 
 const OrderedPage = () => {
   const { token, userId } = useSelector((state) => state.auth);
+  const orders = useSelector((state) => state.orders.orders)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   useEffect(() => {
-    axios
-      .get(
-        `https://food-order-ed00a-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json?auth=${token}&orderBy="userId"&equalTo="${userId}"`
-      )
-      .then((response) => console.log(response.data))
-      .catch((err) => console.log(err));
-  }, [token, userId]);
+    if(!token) {
+      navigate('/auth')
+      return
+    }
+   dispatch(fetchOrders({token, userId}))
+  }, [token, userId, dispatch, navigate]);
   return (
     <section>
       <h2> Hello from ordered page!!</h2>
+      {orders.map(order => (
+        <Order key={order.id} />
+      ))}
     </section>
   );
 };
