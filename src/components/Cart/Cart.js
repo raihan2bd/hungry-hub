@@ -9,6 +9,7 @@ import classes from './Cart.module.css';
 
 const Cart = (props) => {
   const cartState = useSelector((state) => state.cart);
+  const isAuth = useSelector((state) => state.auth.isAuth);
   const totalAmount = `$${cartState.totalAmount.toFixed(2)}`;
   const hasItems = cartState.items.length > 0;
 
@@ -56,10 +57,14 @@ const Cart = (props) => {
 
         {hasItems && (
           <button onClick={() => {
-            navigate('/checkout');
+            if(isAuth) {
+              navigate('/checkout');
+            } else {
+              navigate('/auth')
+            }
             props.onHideCart();
             }} type="button" className={classes.button}>
-            Checkout
+            {isAuth? 'Checkout' : 'Login'}
           </button>
         )}
       </div>
