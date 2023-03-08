@@ -3,22 +3,6 @@ import axios from 'axios';
 
 const baseApiUrl = 'https://food-order-ed00a-default-rtdb.asia-southeast1.firebasedatabase.app';
 
-// export const fetchOrders = createAsyncThunk('order/fetch', async (data) => {
-//   try {
-//     const response = await axios.get(`${baseApiUrl}/orders.json?auth=${data.token}&orderBy="userId"&equalTo="${data.userId}"`)
-//     const fetchedOrders = [];
-//     for (let key in response.data) {
-//       fetchedOrders.push({
-//         ...response.data[key],
-//         id: key
-//       })
-//     }
-//     return fetchOrders;
-//   } catch(err) {
-//     console.log(err);
-//   }
-// });
-
 export const fetchOrders = createAsyncThunk('fetch/order', async({token, userId}) => {
   const response = await axios.get(`${baseApiUrl}/orders.json?auth=${token}&orderBy="userId"&equalTo="${userId}"`)
   const fetchedOrders = [];
@@ -34,17 +18,6 @@ export const fetchOrders = createAsyncThunk('fetch/order', async({token, userId}
 const initialState = {
   orders: [],
 }
-
-// const orderSlice = createSlice({
-//   name: "order-slice",
-//   initialState,
-//   reducers: {},
-//   extraReducers: builder => {
-//     builder.addCase(fetchOrders.fulfilled, (state) => {
-//       return state;
-//     })
-//   }
-// })
 
 const orderSlice = createSlice({
   name: "order-slice",
