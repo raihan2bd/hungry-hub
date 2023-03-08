@@ -1,0 +1,17 @@
+.container {
+  margin: 1rem;
+  padding-top: 1rem;
+}
+
+.title {
+  text-align: center;
+  color: #8a2b06;
+  margin: 1rem 0;
+}
+
+.orders {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
