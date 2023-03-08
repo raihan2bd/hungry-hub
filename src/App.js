@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 import AuthPage from './pages/AuthPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrderedPage from './pages/OrderedPage';
-import About from './pages/About';
+import AboutPage from './pages/AboutPage';
 import Layout from './components/Layout/Layout';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/order" element={<OrderedPage />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </Layout>
   );
