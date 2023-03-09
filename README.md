@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Hungry Hub - Online foods hub.
+<p>
+Hungry Hub is an online platform built using React, Redux, and Firebase, which allows users to browse and cart food items from a variety of restaurants and place orders for home delivery. Users can sign up, browse the menus of different restaurants, add food items to their cart, and proceed to checkout. The platform integrates with Firebase to provide secure payment options and order tracking for users. With Hungry Hub, users can enjoy the convenience of online food ordering and get their favorite meals delivered straight to their doorstep.
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Tech Stack
 
-## Available Scripts
+I used React, Redux, Firebase, Html, Javascript and css to build this Full Stack Project.
+  <summary>Full Stack</summary>
+  <ul>
+    <li>React</li>
+    <li>Redux</li>
+    <li>Firebase</li>
+    <li>JAVASCRIPT</li>
+    <li>Html</li>
+    <li>CSS</li>
+  </ul>
 
-In the project directory, you can run:
+   <summary>Dependencies</summary>
+  <ul>
+    <li><a href="https://www.npmjs.com/package/react-router-dom">react-router-dom</a></li>
+    <li><a href="https://www.npmjs.com/package/@reduxjs/toolkit">@reduxjs/toolkit </a></li>
+    <li><a href="https://www.npmjs.com/package/react-redux">react-redux</a></li>
+    <li><a href="https://www.npmjs.com/package/react-icons">react-icons</a></li>
+    <li><a href="https://www.npmjs.com/package/axios">axios</a></li>
+    <li><a href="https://www.npmjs.com/package/dotenv">dotenv</li>
+  </ul>
 
-### `npm start`
+## Demo
+### Click here to [Live Demo](https://hungry-hub.onrender.com)
+![Capture](https://user-images.githubusercontent.com/35267447/223940500-3aea07b1-4bc6-4705-ae49-e64f96544b44.PNG)
+![Capture3](https://user-images.githubusercontent.com/35267447/223940542-1d5d6920-0aa8-48a0-865a-97005077adac.PNG)
+![Capture4](https://user-images.githubusercontent.com/35267447/223940600-fb056f9d-6c0e-483c-adad-2ea2fa7d29a5.PNG)
+![Capture2](https://user-images.githubusercontent.com/35267447/223940635-6ac10b5b-490f-4d8b-8d80-3f511d0791ba.PNG)
+![Capture5](https://user-images.githubusercontent.com/35267447/223940666-b7784a86-53bc-42ff-bc6c-bf9d0d0cfc29.PNG)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Capture_mb_1](https://user-images.githubusercontent.com/35267447/223940706-81844f8d-abb5-41d6-919d-9d600d679453.PNG)
+![Capture_mb_2](https://user-images.githubusercontent.com/35267447/223940725-9c61fece-fceb-40ce-9fb6-6a1430a3176f.PNG)
+![Capture_mb_3](https://user-images.githubusercontent.com/35267447/223940745-ec7d0d5c-e08c-4bb5-8db3-24c859261b47.PNG)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 💻 Getting Started
+- To get star with this package first of all you have to clone the project ⬇️
+``` bash
+git clone https://github.com/raihan2bd/hungry-hub.git
+```
+- Make sure you have firebase authenticate api key. [See Firebase Rest Api documention](https://firebase.google.com/docs/reference/rest/auth)
+- Then you have to create a file called **.env.local** in your project root lavel and you have to add your api key as like as below 
+![Capture](https://user-images.githubusercontent.com/35267447/219415563-f8faadff-3d27-4f48-aa8c-ec1a680f1a9d.PNG)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Then Make sure you have install [NodeJs](https://nodejs.org).
+- Then make sure you have install [React](https://reactjs.org/) on your local mechine if you want to use this project as localy.
+- To install all the npm packages navigate the folder address on your terminal and enter the below command ⬇️
+``` bash
+npm install
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Usages
+> *Note: Before enter the below command make sure you are in the right directory.*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-  After downloading the packages To build the project as a single executable just run the below command. ⬇️
+``` sh
+npm run build
+```
+- After finishing the avove instructions you can see the project in your local mechine by entering the below command ⬇️
+```sh
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Then you can see this project live on your browser by this link http://localhost:3000 or your given the port nuber you set for the project.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 👥 Author
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤 **Abu Raihan**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- GitHub: [@githubhandle](https://github.com/raihan2bd)
+- Twitter: [@twitterhandle](https://twitter.com/raihan2bd)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/raihan2bd)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## ⭐️ Show your support <a name="support"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Thanks for visiting my repository. Give a ⭐️ if you like this project!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-### Code Splitting
+I would like to thanks Microverse and [Academind](https://academind.com/) especially **Maximilian Schwarzmüller** who help me learn React and redux and help me to build this project. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📝 License <a name="license"></a>
 
-### Analyzing the Bundle Size
+This project is [MIT](./LICENSE) licensed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contribution
+*Your suggestions will be more than appreciated. If you want to suggest anything for this project feel free to do that. :slightly_smiling_face:*
