@@ -9,12 +9,12 @@ const Order = ({ order }) => {
             <li key={item.id} className={classes.item}>
               <h4>{item.name}</h4>
               <span className={classes.order_amount}>x {item.amount}</span>
-              <p className={classes.order_item_price}>{item.price}</p>
+              <p className={classes.order_item_price}>&#36;{item.price}</p>
             </li>
           ))}
         </ul>
         <h4 className={classes.order_total_price}>
-          Total Price: <span>{order.totalAmount}</span>
+          Total Price: <span>&#36;{order.totalAmount}</span>
         </h4>
       </div>
       <div className={classes.customar_info}>
