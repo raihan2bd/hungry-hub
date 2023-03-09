@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 
 import Input from '../../UI/Input';
-import classes from './MealItemForm.module.css';
+import classes from './FoodItemForm.module.css';
 
-const MealItemForm = (props) => {
+const FoodItemForm = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
   const submitHandler = (event) => {
@@ -35,9 +35,9 @@ const MealItemForm = (props) => {
           defaultValue: 1,
         }}
       />
-      <button type="submit">+ Add</button>
+      <button type="submit">Add</button>
       {!amountIsValid && <p>Please enter a valid amount length (1-5)!</p>}
     </form>
   );
 };
-export default MealItemForm;
+export default FoodItemForm;

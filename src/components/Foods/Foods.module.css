@@ -33,6 +33,14 @@
   border: 1px solid #ccc;
 }
 
+.loading, .error {
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
 @media (min-width: 768px) {
   .food_items_header {
     flex-direction: row;

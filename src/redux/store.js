@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authSlice from './auth/authSlice';
 import cartSlice from './cart/cartSlice';
+import foodsSlice from './foods/foodsSlice';
 import orderSlice from './order/orderSlice';
 
 const store = configureStore({
@@ -8,6 +9,7 @@ const store = configureStore({
     auth: authSlice,
     cart: cartSlice,
     orders: orderSlice,
+    foods: foodsSlice,
   }
 });
 
