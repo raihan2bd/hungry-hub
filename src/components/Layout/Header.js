@@ -57,7 +57,7 @@ const Header = () => {
             {!showMenu && <MdOutlineMenu onClick={showMenuHandler} />}
             {showMenu && <MdRestaurantMenu onClick={hideMenuHandler} />}
           </span>
-          <h1>HungryHub</h1>
+          <h1 className={classes.brand_title}><a href="/">HungryHub</a></h1>
         </div>
         <nav className={classes.nav}>
           <ul
