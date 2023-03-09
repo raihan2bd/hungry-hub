@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Hungry Hub - Online foods hub.
+<p>
+Hungry Hub is an online platform built using React, Redux, and Firebase, which allows users to browse and cart food items from a variety of restaurants and place orders for home delivery. Users can sign up, browse the menus of different restaurants, add food items to their cart, and proceed to checkout. The platform integrates with Firebase to provide secure payment options and order tracking for users. With Hungry Hub, users can enjoy the convenience of online food ordering and get their favorite meals delivered straight to their doorstep.
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 💻 Getting Started
+- To get star with this package first of all you have to clone the project ⬇️
+``` bash
+git clone https://github.com/raihan2bd/hungry-hub.git
+```
+- Make sure you have firebase authenticate api key. [See Firebase Rest Api documention](https://firebase.google.com/docs/reference/rest/auth)
+- Then you have to create a file called **.env.local** in your project root lavel and you have to add your api key as like as below 
+![Capture](https://user-images.githubusercontent.com/35267447/219415563-f8faadff-3d27-4f48-aa8c-ec1a680f1a9d.PNG)
 
-## Available Scripts
+- Then Make sure you have install [NodeJs](https://nodejs.org).
+- Then make sure you have install [React](https://reactjs.org/) on your local mechine if you want to use this project as localy.
+- To install all the npm packages navigate the folder address on your terminal and enter the below command ⬇️
+``` bash
+npm install
+```
 
-In the project directory, you can run:
 
-### `npm start`
+# Usages
+> *Note: Before enter the below command make sure you are in the right directory.*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-  After downloading the packages To build the project as a single executable just run the below command. ⬇️
+``` sh
+npm run build
+```
+- After finishing the avove instructions you can see the project in your local mechine by entering the below command ⬇️
+```sh
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Then you can see this project live on your browser by this link http://localhost:3000 or your given the port nuber you set for the project.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 👥 Author
 
-### `npm run build`
+👤 **Abu Raihan**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- GitHub: [@githubhandle](https://github.com/raihan2bd)
+- Twitter: [@twitterhandle](https://twitter.com/raihan2bd)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/raihan2bd)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⭐️ Show your support <a name="support"></a>
 
-### `npm run eject`
+Thanks for visiting my repository. Give a ⭐️ if you like this project!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I would like to thanks Microverse and [Academind](https://academind.com/) especially **Maximilian Schwarzmüller** who help me learn React and redux and help me to build this project. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📝 License <a name="license"></a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project is [MIT](./LICENSE) licensed.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contribution
+*Your suggestions will be more than appreciated. If you want to suggest anything for this project feel free to do that. :slightly_smiling_face:*
