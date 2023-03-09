@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { MdRestaurantMenu, MdOutlineMenu } from 'react-icons/md';
 
@@ -34,6 +34,20 @@ const Header = () => {
   const hideMenuHandler = () => {
     setShowMenu(false);
   };
+
+  useEffect(() => {
+    let cartItems = [];
+    let totalCartPrice = 0;
+    if(localStorage.getItem('cart_items') && localStorage.getItem('cart_items')) {
+      cartItems = JSON.parse(localStorage.getItem('cart_items'));
+      totalCartPrice = JSON.parse(localStorage.getItem('total_amount'));
+    }
+    dispatch(cartActions.retriveCartItems({
+     items: [...cartItems],
+     totalAmount: totalCartPrice
+    }));
+    console.log('hi')
+  }, [dispatch])
 
   return (
     <>
