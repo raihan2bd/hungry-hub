@@ -32,10 +32,24 @@ const cartSlice = createSlice({
       } else {
         updatedItems = state.items.concat(payload);
       }
+
+      // Save cart data to the localstorage
+      localStorage.setItem('cart_items', JSON.stringify(updatedItems));
+      localStorage.setItem('total_amount', JSON.stringify(updatedTotalAmount));
       return {
+        ...state,
         items: updatedItems,
         totalAmount: updatedTotalAmount,
       };
+    },
+
+    retriveCartItems (state, {payload}) {
+      const updatedState = {
+        ...state,
+        ...payload
+      }
+
+      return updatedState;
     },
 
     // removeItem is remove item from state
@@ -57,13 +71,20 @@ const cartSlice = createSlice({
         updatedItems[existingCartItemIndex] = updatedItem;
       }
 
+      // Save cart data to the localstorage
+      localStorage.setItem('cart_items', JSON.stringify(updatedItems));
+      localStorage.setItem('total_amount', JSON.stringify(updatedTotalAmount));
       return {
+        ...state,
         items: updatedItems,
         totalAmount: updatedTotalAmount,
       };
     },
 
     clearCart() {
+      // Clear localstorate cart data
+      localStorage.removeItem('cart_items');
+      localStorage.removeItem('total_amount');
       return {
         items: [],
         totalAmount: 0,
