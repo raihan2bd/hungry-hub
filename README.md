@@ -3,6 +3,22 @@
 Hungry Hub is an online platform built using React, Redux, and Firebase, which allows users to browse and cart food items from a variety of restaurants and place orders for home delivery. Users can sign up, browse the menus of different restaurants, add food items to their cart, and proceed to checkout. The platform integrates with Firebase to provide secure payment options and order tracking for users. With Hungry Hub, users can enjoy the convenience of online food ordering and get their favorite meals delivered straight to their doorstep.
 </p>
 
+### Tech Stack
+
+I used React, Redux, Firebase, Html, Javascript and css to build this Full Stack Project.
+  <summary>Full Stack</summary>
+  <ul>
+    <li>React</li>
+    <li>Redux</li>
+    <li>Firebase</li>
+    <li>JAVASCRIPT</li>
+    <li>Html</li>
+    <li>CSS</li>
+  </ul>
+
+## Demo
+Demo info will place here...
+
 ## 💻 Getting Started
 - To get star with this package first of all you have to clone the project ⬇️
 ``` bash
