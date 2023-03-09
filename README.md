@@ -16,6 +16,16 @@ I used React, Redux, Firebase, Html, Javascript and css to build this Full Stack
     <li>CSS</li>
   </ul>
 
+   <summary>Dependencies</summary>
+  <ul>
+    <li><a href="https://www.npmjs.com/package/react-router-dom">react-router-dom</a></li>
+    <li><a href="https://www.npmjs.com/package/@reduxjs/toolkit">@reduxjs/toolkit </a></li>
+    <li><a href="https://www.npmjs.com/package/react-redux">react-redux</a></li>
+    <li><a href="https://www.npmjs.com/package/react-icons">react-icons</a></li>
+    <li><a href="https://www.npmjs.com/package/axios">axios</a></li>
+    <li><a href="https://www.npmjs.com/package/dotenv">dotenv</li>
+  </ul>
+
 ## Demo
 ### Click here to [Live Demo](https://hungry-hub.onrender.com)
 ![Capture](https://user-images.githubusercontent.com/35267447/223940500-3aea07b1-4bc6-4705-ae49-e64f96544b44.PNG)
