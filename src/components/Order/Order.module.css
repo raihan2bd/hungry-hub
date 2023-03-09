@@ -4,22 +4,34 @@
   background: #d8d8d8;
   border-radius: 12px;
   animation: order_animation 0.5s ease-in-out;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.40);
+}
+
+.order:nth-child(odd) {
+  animation: order_odd_animation 0.5s ease-in-out;
+}
+
+@keyframes order_animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes order_odd_animation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .order_items_summery {
   flex: 1;
   padding: 1rem;
-}
-
-@keyframes cart_summary_animation {
-  0% {
-    transform: translateX(-100%);
-  }
-  
-  100% {
-    transform: translateX(0);
-
-  }
 }
 
 .items {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { MdRestaurantMenu, MdOutlineMenu } from 'react-icons/md';
 
@@ -35,6 +35,20 @@ const Header = () => {
     setShowMenu(false);
   };
 
+  useEffect(() => {
+    let cartItems = [];
+    let totalCartPrice = 0;
+    if(localStorage.getItem('cart_items') && localStorage.getItem('cart_items')) {
+      cartItems = JSON.parse(localStorage.getItem('cart_items'));
+      totalCartPrice = JSON.parse(localStorage.getItem('total_amount'));
+    }
+    dispatch(cartActions.retriveCartItems({
+     items: [...cartItems],
+     totalAmount: totalCartPrice
+    }));
+    console.log('hi')
+  }, [dispatch])
+
   return (
     <>
       <header className={classes.header}>
@@ -43,7 +57,7 @@ const Header = () => {
             {!showMenu && <MdOutlineMenu onClick={showMenuHandler} />}
             {showMenu && <MdRestaurantMenu onClick={hideMenuHandler} />}
           </span>
-          <h1>HungryHub</h1>
+          <h1 className={classes.brand_title}><a href="/">HungryHub</a></h1>
         </div>
         <nav className={classes.nav}>
           <ul
