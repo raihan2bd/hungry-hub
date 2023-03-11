@@ -1,7 +1,7 @@
 .order {
   display: flex;
   flex-direction: column;
-  background: #d8d8d8;
+  background: #fff;
   border-radius: 12px;
   animation: order_animation 0.5s ease-in-out;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.40);
@@ -39,9 +39,10 @@
 }
 
 .item {
-  padding: 0.5rem 1rem;
+  padding: 0.625rem 1rem;
   display: flex;
   gap: 1rem;
+  border-radius: 3px;
 }
 
 .item:nth-child(odd) {
@@ -68,7 +69,13 @@
   font-size: 0.95rem;
   padding: 1rem;
   border: none;
-  background: #c7c7c7;
+  background: #dadada;
+  border-end-start-radius: inherit;
+  border-end-end-radius: inherit;
+}
+
+.customar_info .item:nth-child(odd) {
+  background: #eeeeee;
 }
 
 @media (min-width: 768px) {
@@ -80,6 +87,7 @@
   .customar_info {
     background: transparent;
     border: none;
-    border-left: 3px solid #000000;
+    border-left: 3px solid #a5a5a5;
+    border-radius: inherit;
   }
 }

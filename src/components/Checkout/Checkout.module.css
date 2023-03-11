@@ -3,14 +3,15 @@
   padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .cart_summary {
   flex: 1;
   padding: 1rem;
-  background: #d8d8d8;
+  background: #fff;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   animation: cart_summary_animation 0.5s ease-in-out;
 }
 
@@ -38,6 +39,7 @@
   padding: 0.5rem 1rem;
   display: flex;
   gap: 1rem;
+  border-radius: 3px;
 }
 
 .cart_item:nth-child(odd) {
@@ -62,10 +64,11 @@
 .checkout_form {
   flex: 1;
   width: 100%;
-  background: #c7c7c7;
+  background: #fff;
   border-radius: 12px;
   padding: 1rem;
   animation: form_animation 0.5s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 @keyframes form_animation {
@@ -104,6 +107,7 @@
   border: none;
   border-radius: 3px;
   font-size: 1rem;
+  border: 1px solid #ccc;
 }
 
 .checkout_form button {
@@ -113,6 +117,7 @@
   background: #8a2b06;
   color: #fff;
   font-size: 1rem;
+  border-radius: 3px;
 }
 
 .checkout_form button:active {
@@ -129,6 +134,8 @@
 @media (min-width: 768px) {
   .container {
     flex-direction: row;
+    margin: 1.5rem;
+    padding-top: 1.5rem;
   }
   .checkout_form {
     align-items: center;
